@@ -1,2 +1,31 @@
-<h1>{{ title }}</h1>
-<app-heroes></app-heroes>
+<!-- <h1>{{ title }}</h1>
+<app-heroes></app-heroes> -->
+
+<button (click)="getData('button event click')">click data</button>
+<br />
+<br />
+<input
+  type="text"
+  #box1
+  placeholder="box keyup"
+  (keyup)="getData(box1.value)"
+/>
+<br />
+<br />
+<input
+  type="text"
+  #box2
+  placeholder="box keydown"
+  (keydown)="getData(box2.value)"
+/>
+<br />
+<br />
+<input type="text" #box3 placeholder="box blur" (blur)="getData(box3.value)" />
+<br />
+<br />
+<input
+  type="text"
+  #box4
+  placeholder="box input"
+  (input)="getData(box4.value)"
+/>
