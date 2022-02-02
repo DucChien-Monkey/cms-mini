@@ -1,2 +1,10 @@
-<h1>{{ title }}</h1>
-<app-heroes></app-heroes>
+<!-- <h1>{{ title }}</h1>
+<app-heroes></app-heroes> -->
+
+<h1>get input values</h1>
+
+<input type="text" #box placeholder="enter name" name="username" />
+
+<button (click)="getValue(box.name)">Click me</button>
+
+<p>value : {{ displayVal }}</p>
