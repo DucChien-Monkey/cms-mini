@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "name": "123",
+      "email": "123@gmail.com",
+      "phone": "23454979",
+      "address": "hung yen",
+      "service": "coffee2"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
