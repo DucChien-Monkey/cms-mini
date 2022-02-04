@@ -1,6 +1,12 @@
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid">
     <h2>CmsMini</h2>
+    <input
+      type="text"
+      class="form-control w-50"
+      placeholder="Search..."
+      [(ngModel)]="filterTerm"
+    />
     <div class="d-flex">
       <button
         type="button"
@@ -28,7 +34,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of allItemData">
+    <tr
+      *ngFor="
+        let data of allItemData
+          | filter: filterTerm
+          | paginate: { itemsPerPage: 10, currentPage: p }
+      "
+    >
       <td>{{ data.id }}</td>
       <td>{{ data.name }}</td>
       <td>{{ data.email }}</td>
@@ -51,6 +63,9 @@
     </tr>
   </tbody>
 </table>
+<div class="d-flex justify-content-end">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 
 <!-- Modal -->
 <div
@@ -139,10 +154,20 @@
         >
           Clear
         </button>
-        <button *ngIf="showAdd"  type="button" class="btn btn-primary" (click)="addItem()">
+        <button
+          *ngIf="showAdd"
+          type="button"
+          class="btn btn-primary"
+          (click)="addItem()"
+        >
           Add
         </button>
-        <button  *ngIf="showBtn" type="button" class="btn btn-primary" (click)="updateItem()">
+        <button
+          *ngIf="showBtn"
+          type="button"
+          class="btn btn-primary"
+          (click)="updateItem()"
+        >
           Update
         </button>
       </div>

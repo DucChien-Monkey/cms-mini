@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { CmsDashComponent } from './cms-dash/cms-dash.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [AppComponent, HeroesComponent, CmsDashComponent],
   imports: [
@@ -15,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

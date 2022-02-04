@@ -10,11 +10,12 @@ import { ItemData } from './cms.model';
 })
 export class CmsDashComponent implements OnInit {
   formValue!: FormGroup;
-
+  p: number = 1;
   itemModelObj: ItemData = new ItemData();
   allItemData: any;
   showAdd!: boolean;
   showBtn!: boolean;
+  filterTerm!: string;
   constructor(private formBuilder: FormBuilder, private api: ApiService) {}
 
   ngOnInit(): void {
