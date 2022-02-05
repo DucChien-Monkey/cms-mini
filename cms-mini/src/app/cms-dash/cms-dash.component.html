@@ -20,7 +20,8 @@
     </div>
   </div>
 </nav>
-
+<app-filter [list]="filterList" (onFilterChange)="filterChange($event)">
+</app-filter>
 <table class="table mt-3">
   <thead>
     <tr>

@@ -16,6 +16,14 @@ export class CmsDashComponent implements OnInit {
   showAdd!: boolean;
   showBtn!: boolean;
   filterTerm!: string;
+
+  filterList = [];
+
+  // filterList = {
+  //   name: this.allItemData.name,
+  //   sector: ['IT', 'Agriculture', 'Medical'],
+  // };
+
   constructor(private formBuilder: FormBuilder, private api: ApiService) {}
 
   ngOnInit(): void {
@@ -60,6 +68,13 @@ export class CmsDashComponent implements OnInit {
   getAllItems() {
     this.api.getItem().subscribe((res) => {
       this.allItemData = res;
+      this.filterList = {
+        name: this.itemModelObj.name,
+        phone: this.allItemData.phone,
+        address: this.allItemData.address,
+        
+      };
+      console.log(res);
     });
   }
 
@@ -98,5 +113,8 @@ export class CmsDashComponent implements OnInit {
         this.formValue.reset();
         this.getAllItems();
       });
+  }
+  filterChange(appliedfilters: any) {
+    console.log(appliedfilters);
   }
 }
