@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "generic-list-filter": "^0.1.6",
     "json-server": "^0.17.0",
     "ng2-search-filter": "^0.5.1",
     "ngx-pagination": "^5.1.1",
